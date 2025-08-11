@@ -5,8 +5,8 @@ export async function GET(req: NextRequest) {
   const userAgent = req.headers.get('user-agent') || '';
   const ipAddress =
     req.headers.get('x-forwarded-for') ||
-    req.ip ||
     '';
+    
   const { searchParams } = new URL(req.url);
   const pageURL = searchParams.get('url') || '';
   const referrer = req.headers.get('referer') || '';
